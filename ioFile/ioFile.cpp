@@ -22,5 +22,14 @@ int main() {
 		//menulis dan memasukan nilai  dari 'baris' ke dalam file
 		outfile << baris << endl;
 	}
+	//selesai dalam menulis sekarnag tutup filenya
+	outfile.close();
+
+	//membuka file dalam mode membaca
+	ifstream infile;
+	//menujuk ke suatu file
+	infile.open("contohfile.txt");
+
+	cout << endl << ">= Membuka dan membaca file " << endl;
 
 }
