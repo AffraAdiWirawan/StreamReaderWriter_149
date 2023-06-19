@@ -16,6 +16,30 @@ int main() {
 	// membuka file dalam mode membaca
 	ifstream infile;
 	// menunjukan ke sebuah file
-	infile.open(NamaFile, ios::in);
+	infile.open(NamaFile, ios::in); cout << endl << ">= Membuka dan membaca file " << endl;
+	//jika file ada maka
+	if (infile.is_open())
+	{
+		//membuka file dalam mode file
+		infile.open(NamaFile, ios::in);
+
+		cout << endl << ">= Membuka dan membaca file " << endl;
+		//jika file ada maka
+		if (infile.is_open())
+		{
+
+			// melakukan perulangan setiap baris
+			while (getline(infile, baris))
+			{
+				// dan tampilkan di sini
+				cout << baris << '\n';
+			}
+			//tutup file tersebut setelah selesai
+			infile.close();
+		}
+		// jika tidak ditemukan file makna akan menampilkan ini
+		else cout << " unable to open file";
+		return 0;
+	}
 
 }
